@@ -1,0 +1,102 @@
+body{
+    margin: 0;
+    font-family: 'Architects Daughter', cursive;
+}
+main{
+    background: black;
+    position: absolute;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    
+  background-image: url("../imgs/bg.jpg");
+background-size: 225px 225px;
+  position: absolute;
+}
+
+main.zoom1{
+    
+}
+
+
+div{
+    overflow:hidden;
+    position: absolute;
+    transition: linear .2s;
+    box-shadow: 0px 15px 9px #00000080;
+}
+
+div a{
+  text-decoration:none;
+  color:#000;
+  display:block;
+  height:15vw;
+  width:15vw;
+  padding:1em;
+}
+
+#sticky1{
+    left:10vw;
+    top:10vh;
+    background:#ffc;
+    border-top: 20px solid #f7f759;
+    transform: rotate(4deg);
+}
+
+#sticky1:hover{
+    transform: scale(1.1);
+}
+
+#sticky2{
+    left:40vw;
+    top:20vh;
+    background:#b9ef91;
+    border-top: 20px solid #a2d979;
+    transform: rotate(-2deg);
+}
+
+#sticky2:hover{
+    transform: scale(1.1);
+}
+
+#sticky3{
+    left:70vw;
+    top:10vh;
+    background:#97daff;
+    border-top: 20px solid #79cbf8;
+    transform: rotate(9deg);
+}
+
+#sticky3:hover{
+    transform: scale(1.1);
+}
+
+#sticky4{
+    left: 20vw;
+    top:60vh;
+    background:#f795bd;
+    border-top: 20px solid #f24b8f;
+    transform: rotate(-7deg);
+}
+
+#sticky4:hover{
+    transform: scale(1.1);
+}
+
+#sticky5{
+    left: 65vw;
+    top:55vh;
+    background:#ffd884;
+    border-top: 20px solid #fab51f;
+    transform: rotate(2deg);
+}
+
+#sticky5:hover{
+    transform: scale(1.1);
+}
+
+div:hover{
+    box-shadow: 0px 9px 20px #000;
+}
+
