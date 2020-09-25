@@ -8,44 +8,106 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <canvas id="bg"></canvas>
-        <div>
-            <h1>Black Hole Research Project</h1>
-            <img src="imgs/bh_visualization.png"/>
-            <p>By: Madison Doucette, Addison Craik, Connor Brown, Ethan Johnson</p>
-        </div>
-        <script>
-            let canvas = document.getElementById("bg")
-            let ctx = canvas.getContext("2d")
-            
-            let keys = ""
-            
-            window.onresize = function(){
-                canvas.height = window.innerHeight;
-                canvas.width = window.innerWidth;
-            
-                for(i=0;i<canvas.width/10;i++){
-                    ctx.beginPath() 
-                    ctx.arc(Math.random()*canvas.width,Math.random()*canvas.height,Math.random()*5,0,Math.PI*2,1)
-                    ctx.fillStyle = "#ffffff80"
-                    ctx.fill()
-                }
-            }
-            
-            document.onkeydown = function(e){
-                keys += e.key
-                console.log(e.key)
-                if(keys.indexOf("ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightbaEnter") >= 0){
-                    keys = ""
-                    window.location.href = "https://en.wikipedia.org/wiki/Konami_Code";
-                }
-            }
-            
-            document.onclick = function(){
-                window.location.href = "main_page/index.html";
-            }
-            
-            onresize()
-        </script>
+        <main id="content">
+            <div id="sticky1" onclick="sticky1()">
+                <a href="#">
+                    <h2>What is a black hole?</h2>
+                    <p>Img here</p>
+                </a>
+            </div>
+            <div id="sticky2" onclick="sticky2()">
+                <a href="#">
+                    <h2>Do black holes exist?</h2>
+                    <p>img here</p>
+                </a>
+            </div>
+            <div id="sticky3" onclick="sticky3()">
+                <a href="#">
+                    <h2>How are black holes made?</h2>
+                    <p>img here</p>
+                </a>
+            </div>
+            <div id="sticky4" onclick="sticky4()">
+                <a href="#">
+                    <h2>What evidence can be used to find a black hole?</h2>
+                    <p>img here</p>
+                </a>
+            </div>
+            <div id="sticky5" onclick="sticky5()">
+                <a href="#">
+                    <h2>How might that evidence be collected?</h2>
+                    <p>img here</p>
+                </a>
+            </div>
+        </main>
     </body>
+    <script>
+        let main = document.getElementById("content")
+        
+        let width = window.innerWidth
+        let height = window.innerHeight
+        let zoomed = false;
+        let stickies = []
+        
+        for(i=1;i<6;i++){
+            stickies.push(document.getElementById("sticky"+i))
+        }
+        
+        
+        window.onresize = function(){
+              width = window.innerWidth
+            height = window.innerHeight  
+        }
+        
+        main.onmouseup = function(){
+            if(zoomed){
+                main.style.transform = "scale(1)"
+                main.style.top = "0px"
+                main.style.left = "0px"
+                for(i=0;i<5;i++){
+                    stickies[i].style.transform = ""
+                }
+            }
+        }
+        
+        function sticky1(){
+            main.style.transform = "scale(3)"
+            main.style.top = (height*0.7+height/6-width*0.075+20/3)+"px"
+            main.style.left = (width*0.7+width/6+width*0.075)+"px"
+            stickies[0].style.transform = "rotate(0)"
+            zoomed = 1;
+        }
+        
+        function sticky2(){
+            main.style.transform = "scale(3)"
+            main.style.top = (height*0.40+height/6-width*0.075+20/3)+"px"
+            main.style.left = (width*-0.2+width/6+width*0.075)+"px"
+            stickies[1].style.transform = "rotate(0)"
+            zoomed = 1;
+        }
+        
+        function sticky3(){
+            main.style.transform = "scale(3)"
+            main.style.top = (height*0.7+height/6-width*0.075+20/3)+"px"
+            main.style.left = (width*-1.1+width/6+width*0.075)+"px"
+            stickies[2].style.transform = "rotate(0)"
+            zoomed = 1;
+        }
+        
+        function sticky4(){
+            main.style.transform = "scale(3)"
+            main.style.top = (height*-0.8+height/6-width*0.075+20/3)+"px"
+            main.style.left = (width*0.4+width/6+width*0.075)+"px"
+            stickies[3].style.transform = "rotate(0)"
+            zoomed = 1;
+        }
+        
+        function sticky5(){
+            main.style.transform = "scale(3)"
+            main.style.top = (height*-0.65+height/6-width*0.075+20/3)+"px"
+            main.style.left = (width*-0.95+width/6+width*0.075)+"px"
+            stickies[4].style.transform = "rotate(0)"
+            zoomed = 1;
+        }
+    </script>
 </html>
