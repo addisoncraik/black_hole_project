@@ -36,12 +36,13 @@
                 keys += e.key
                 console.log(e.key)
                 if(keys.indexOf("ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightbaEnter") >= 0){
+                    keys = ""
                     window.location.href = "https://en.wikipedia.org/wiki/Konami_Code";
                 }
             }
             
             document.onclick = function(){
-                window.location.href = "https://en.wikipedia.org/wiki/Konami_Code";
+                window.location.href = "main_page/index.html";
             }
             
             onresize()
