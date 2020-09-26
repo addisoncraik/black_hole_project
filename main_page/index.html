@@ -40,6 +40,9 @@
                 </a>
             </div>
         </main>
+        <svg id="left" viewBox="0 0 24 24"><path fill="#00000080" d="M3 24l18-12-18-12v24zm16.197-12l-15.197 10.132v-20.263l15.197 10.131"/></svg>
+        
+        <svg id="right" viewBox="0 0 24 24"><path fill="#00000080" d="M3 24l18-12-18-12v24zm16.197-12l-15.197 10.132v-20.263l15.197 10.131"/></svg>
     </body>
     <script>
         let main = document.getElementById("content")
@@ -64,50 +67,78 @@
                 main.style.transform = "scale(1)"
                 main.style.top = "0px"
                 main.style.left = "0px"
+                document.getElementById("left").style.display = document.getElementById("right").style.display = "none"
                 for(i=0;i<5;i++){
                     stickies[i].style.transform = ""
                 }
             }
         }
         
+        function buttons(current){
+            let left = document.getElementById("left") 
+            let right = document.getElementById("right")
+            
+            let next = current+1
+            let previous = current-1
+            
+            if(next > 5){
+                next = 1;
+            }
+            
+            if(previous < 1){
+                previous = 5;
+            }
+            
+            left.setAttribute("onclick","sticky"+previous+"()")
+            right.setAttribute("onclick","sticky"+next+"()")
+            
+            
+            left.style.display = right.style.display = "block"
+        }
+        
         function sticky1(){
             main.style.transform = "scale(3)"
-            main.style.top = (height*0.7+height/6-width*0.075+20/3)+"px"
-            main.style.left = (width*0.7+width/6+width*0.075)+"px"
+            main.style.top = (height*0.7+height/2-(width*0.075+width*0.01+10)*3)+"px"
+            main.style.left = (width*0.7+width/2-(width*0.075+width*0.01)*3)+"px"
             stickies[0].style.transform = "rotate(0)"
             zoomed = 1;
+            buttons(1)
         }
         
         function sticky2(){
             main.style.transform = "scale(3)"
-            main.style.top = (height*0.40+height/6-width*0.075+20/3)+"px"
-            main.style.left = (width*-0.2+width/6+width*0.075)+"px"
+            main.style.top = (height*0.40+height/2-(width*0.075+width*0.01+10)*3)+"px"
+            main.style.left = (width*-0.2+width/2-(width*0.075+width*0.01)*3)+"px"
             stickies[1].style.transform = "rotate(0)"
             zoomed = 1;
+            buttons(2)
         }
         
         function sticky3(){
             main.style.transform = "scale(3)"
-            main.style.top = (height*0.7+height/6-width*0.075+20/3)+"px"
-            main.style.left = (width*-1.1+width/6+width*0.075)+"px"
+            main.style.top = (height*0.7+height/2-(width*0.075+width*0.01+10)*3)+"px"
+            main.style.left = (width*-1.1+width/2-(width*0.075+width*0.01)*3)+"px"
             stickies[2].style.transform = "rotate(0)"
             zoomed = 1;
+            buttons(3)
         }
         
         function sticky4(){
             main.style.transform = "scale(3)"
-            main.style.top = (height*-0.8+height/6-width*0.075+20/3)+"px"
-            main.style.left = (width*0.4+width/6+width*0.075)+"px"
+            main.style.top = (height*-0.8+height/2-(width*0.075+width*0.01+10)*3)+"px"
+            main.style.left = (width*0.4+width/2-(width*0.075+width*0.01)*3)+"px"
             stickies[3].style.transform = "rotate(0)"
             zoomed = 1;
+            buttons(4)
         }
         
         function sticky5(){
             main.style.transform = "scale(3)"
-            main.style.top = (height*-0.65+height/6-width*0.075+20/3)+"px"
-            main.style.left = (width*-0.95+width/6+width*0.075)+"px"
+            main.style.top = (height*-0.65+height/2-(width*0.075+width*0.01+10)*3)+"px"
+            main.style.left = (width*-0.95+width/2-(width*0.075+width*0.01)*3)+"px"
             stickies[4].style.transform = "rotate(0)"
             zoomed = 1;
+            buttons(5)
         }
     </script>
 </html>
