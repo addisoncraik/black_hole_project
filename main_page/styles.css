@@ -1,25 +1,19 @@
 body{
+    overflow: hidden;
     margin: 0;
-    overflow:hidden;
     font-family: 'Architects Daughter', cursive;
 }
 main{
     background: black;
     position: absolute;
-    top:0;
+    top: 0;
     left:0;
     width:100vw;
     height:100vh;
     
   background-image: url("../imgs/bg.jpg");
 background-size: 225px 225px;
-  position: absolute;
 }
-
-main.zoom1{
-    
-}
-
 
 div{
     overflow:hidden;
@@ -28,21 +22,49 @@ div{
     box-shadow: 0px 15px 9px #00000080;
 }
 
+#left{
+    position: absolute;
+    left: 10vw;
+    top: calc(50vh - 3.5vw);
+    width: 7vw;
+    transform: scaleX(-1);
+    transition: .5s ease;
+    display:none;
+}
+
+#right{
+    position: absolute;
+    right: 10vw;
+    top: calc(50vh - 3.5vw);
+    width: 7vw;
+    transition: .5s ease;
+    display: none;
+}
+
+#left:hover{
+    transform: scale(-1.1, 1.1);
+}
+
+#right:hover{
+    transform: scale(1.1);
+}
+
 div a{
   text-decoration:none;
   color:#000;
   display:block;
   height:15vw;
   width:15vw;
-  padding:1em;
+  padding:1vw;
 }
 
 #sticky1{
     left:10vw;
-    top:10vh;
+    top: 10vh;
     background:#ffc;
     border-top: 20px solid #f7f759;
     transform: rotate(4deg);
+    padding: 0;
 }
 
 #sticky1:hover{
