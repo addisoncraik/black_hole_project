@@ -2,6 +2,7 @@ body{
     overflow: hidden;
     margin: 0;
     font-family: 'Architects Daughter', cursive;
+    background: black;
 }
 main{
     background: black;
@@ -13,6 +14,7 @@ main{
     
   background-image: url("../imgs/bg.jpg");
 background-size: 225px 225px;
+    z-index: 0;
 }
 
 div{
@@ -123,3 +125,20 @@ div:hover{
     box-shadow: 0px 9px 20px #000;
 }
 
+div .back{
+    position: absolute;
+    top:0;
+    left:0;
+    display: none;
+}
+
+div a h2{
+    margin: 0;
+    font-size: 1.5vw;
+    font-weight: 600;
+}
+
+div a p{
+    margin: 0 30 0 0;
+    font-size: 1vw;
+}
