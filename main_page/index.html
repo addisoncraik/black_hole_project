@@ -12,7 +12,8 @@
             <div id="sticky1" onclick="sticky1()">
                 <a class="front">
                     <h2>What is a black hole?</h2>
-                    <p>Img here</p>
+                    <img src="https://scx2.b-cdn.net/gfx/news/2020/hungriestofb.jpg"/>
+                    <p>(Click to Continue)</p>
                 </a>
                 
                 <a class="back">
@@ -23,7 +24,8 @@
             <div id="sticky2" onclick="sticky2()">
                 <a class="front">
                     <h2>Do black holes exist?</h2>
-                    <p>img here</p>
+                    <img src="../imgs/black_hole_1.png"/>
+                    <p>(Click to Continue)</p>
                 </a>
                 
                 <a class="back">
@@ -34,7 +36,8 @@
             <div id="sticky3" onclick="sticky3()">
                 <a class="front">
                     <h2>How do black holes form?</h2>
-                    <p>img here</p>
+                    <img src="https://msslastro.files.wordpress.com/2014/04/stellar_evolution_large.jpg"/>
+                    <p>(Click to Continue)</p>
                 </a>
                 
                 <a class="back">
@@ -45,7 +48,8 @@
             <div id="sticky4" onclick="sticky4()">
                 <a class="front">
                     <h2>What evidence can be used to find a black hole?</h2>
-                    <p>img here</p>
+                    <img src="https://lh3.googleusercontent.com/proxy/XQ34hgdEe5zPO608ztFfZ_5D-cbTZ-FqFUfTphi0ysuzk-unHuXw52mPtQ2lnWU5LWc_DWmbfe4viGjvnUOefoJ3fUw9ToL425nPu69bNl7gtKz-lWgfxWC8WfZoRg"/>
+                    <p>(Click to Continue)</p>
                 </a>
                 
                 <a class="back">
@@ -56,7 +60,8 @@
             <div id="sticky5" onclick="sticky5()">
                 <a class="front">
                     <h2>How might that evidence be collected?</h2>
-                    <p>img here</p>
+                    <img src="../imgs/black_hole_2.jpg"/>
+                    <p>(Click to Continue)</p>
                 </a>
                 
                 <a class="back">
@@ -76,6 +81,7 @@
         let height = window.innerHeight
         let zoomed = false;
         let stickies = []
+        let escape = 0;
         
         for(i=1;i<6;i++){
             stickies.push(document.getElementById("sticky"+i))
@@ -90,6 +96,7 @@
         document.onkeydown = function(e){
             if(e.key == "Escape"){
                 e.preventDefault()
+                escape = 1;
                 main.onmouseup()
             }
             
@@ -110,7 +117,7 @@
         
         main.onmouseup = function(e){
             let target = e
-            if(target && target.srcElement.id == "content"){
+            if((target && target.srcElement.id == "content") || escape){
                 main.style.transform = "scale(1)"
                 main.style.top = "0px"
                 main.style.left = "0px"
@@ -120,6 +127,7 @@
                 }
                 zoomed = 0;
                 buttonSound()
+                escape = 0;
             }else{
                 zoomed = 1;
             }
@@ -165,7 +173,7 @@
             main.onmouseup()
             main.style.transform = "scale(3)"
             main.style.top = (height*0.7+height/2-(width*0.075+width*0.01+10)*3)+"px"
-            main.style.left = (width*0.7+width/2-(width*0.075+width*0.01)*3)+"px"
+            main.style.left = (width*0.7+width/2-(width*0.1+width*0.01)*3)+"px"
             clicked(arrow)
             stickies[0].style.transform = "rotate(0)"
             zoomed = 1;
@@ -177,7 +185,7 @@
             main.onmouseup()
             main.style.transform = "scale(3)"
             main.style.top = (height*0.40+height/2-(width*0.075+width*0.01+10)*3)+"px"
-            main.style.left = (width*-0.2+width/2-(width*0.075+width*0.01)*3)+"px"
+            main.style.left = (width*-0.2+width/2-(width*0.1+width*0.01)*3)+"px"
             clicked(arrow)
             stickies[1].style.transform = "rotate(0)"
             zoomed = 1;
@@ -189,7 +197,7 @@
             main.onmouseup()
             main.style.transform = "scale(3)"
             main.style.top = (height*0.7+height/2-(width*0.075+width*0.01+10)*3)+"px"
-            main.style.left = (width*-1.1+width/2-(width*0.075+width*0.01)*3)+"px"
+            main.style.left = (width*-1.1+width/2-(width*0.1+width*0.01)*3)+"px"
             clicked(arrow)
             stickies[2].style.transform = "rotate(0)"
             zoomed = 1;
@@ -201,7 +209,7 @@
             main.onmouseup()
             main.style.transform = "scale(3)"
             main.style.top = (height*-0.8+height/2-(width*0.075+width*0.01+10)*3)+"px"
-            main.style.left = (width*0.4+width/2-(width*0.075+width*0.01)*3)+"px"
+            main.style.left = (width*0.4+width/2-(width*0.1+width*0.01)*3)+"px"
             clicked(arrow)
             stickies[3].style.transform = "rotate(0)"
             zoomed = 1;
@@ -213,7 +221,7 @@
             main.onmouseup()
             main.style.transform = "scale(3)"
             main.style.top = (height*-0.65+height/2-(width*0.075+width*0.01+10)*3)+"px"
-            main.style.left = (width*-0.95+width/2-(width*0.075+width*0.01)*3)+"px"
+            main.style.left = (width*-0.95+width/2-(width*0.1+width*0.01)*3)+"px"
             clicked(arrow)
             stickies[4].style.transform = "rotate(0)"
             zoomed = 1;
@@ -223,7 +231,7 @@
         
         
         function buttonSound(){
-           zzfx(...[,,0,.04,.04,0,3,.65,,,27,.16,.15,,,.8,.43,.07,.23]); // Random 25
+           //zzfx(...[,,0,.04,.04,0,3,.65,,,27,.16,.15,,,.8,.43,.07,.23]); // Random 25
         }
         
         zzfxV=1;zzfx=(q=1,k=.05,c=220,e=0,t=0,u=.1,r=0,F=1,v=0,z=0,w=0,A=0,l=0,B=0,x=0,G=0,d=0,y=1,m=0,C=0)=>{let b=2*Math.PI,H=v*=500*b/zzfxR**2,I=(0<x?1:-1)*b/4,D=c*=(1+2*k*Math.random()-k)*b/zzfxR,Z=[],g=0,E=0,a=0,n=1,J=0,K=0,f=0,p,h;e=9+zzfxR*e;m*=zzfxR;t*=zzfxR;u*=zzfxR;d*=zzfxR;z*=500*b/zzfxR**3;x*=b/zzfxR;w*=b/zzfxR;A*=zzfxR;l=zzfxR*l|0;for(h=e+m+t+u+d|0;a<h;Z[a++]=f)++K%(100*G|0)||(f=r?1<r?2<r?3<r?Math.sin((g%b)**3):Math.max(Math.min(Math.tan(g),1),-1):1-(2*g/b%2+2)%2:1-4*Math.abs(Math.round(g/b)-g/b):Math.sin(g),f=(l?1-C+C*Math.sin(2*Math.PI*a/l):1)*(0<f?1:-1)*Math.abs(f)**F*q*zzfxV*(a<e?a/e:a<e+m?1-(a-e)/m*(1-y):a<e+m+t?y:a<h-d?(h-a-d)/u*y:0),f=d?f/2+(d>a?0:(a<h-d?1:(h-a)/d)*Z[a-d|0]/2):f),p=(c+=v+=z)*Math.sin(E*x-I),g+=p-p*B*(1-1E9*(Math.sin(a)+1)%2),E+=p-p*B*(1-1E9*(Math.sin(a)**2+1)%2),n&&++n>A&&(c+=w,D+=w,n=0),!l||++J%l||(c=D,v=H,n=n||1);q=zzfxX.createBuffer(1,h,zzfxR);q.getChannelData(0).set(Z);c=zzfxX.createBufferSource();c.buffer=q;c.connect(zzfxX.destination);c.start();return c};zzfxX=new(window.AudioContext||webkitAudioContext);zzfxR=44100
