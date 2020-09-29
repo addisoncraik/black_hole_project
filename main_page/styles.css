@@ -63,8 +63,8 @@ div a{
 #sticky1{
     left:10vw;
     top: 10vh;
-    background:#ffc;
-    border-top: 20px solid #f7f759;
+    background:#ffffaf;
+    border-top: 20px solid #fafa32;
     transform: rotate(4deg);
     padding: 0;
 }
@@ -144,7 +144,11 @@ div .front p{
     position: absolute;
     left:50%;
     transform: translateX(-50%);
-    bottom:1vw;
+    bottom:1.5vw;
+}
+
+#sticky4 .front p{
+    bottom:2vw;
 }
 
 div a img{
@@ -154,4 +158,24 @@ div a img{
     left:50%;
     transform: translate(-50%, -50%);
     
+}
+
+#check{
+    position: absolute;
+    z-index:1;
+    bottom:2vw;
+    right:2vw;
+    font-size: 1vw;
+    background: white;
+    padding: .5vw;
+    border-radius: 5px;
+    opacity: 0;
+}
+
+#check:hover{
+    opacity: 1;
+}
+
+#checkbox{
+    margin-right:5px;
 }
