@@ -147,13 +147,18 @@ div .front p{
     bottom:1.5vw;
 }
 
+div .back p{
+    margin: .7vw 0 0 .5vw;
+    font-size: .8vw;
+}
+
 div .back ul li{
     margin-bottom: .4vw;
 }
 
 
 div .back ul{
-    margin: 1vw 1vw 0 0;
+    margin: .5vw 1vw 0 0;
     font-size: .7vw;
 }
 
