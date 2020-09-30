@@ -72,9 +72,9 @@
             </div>   
             <img id="kirb" src="../imgs/kirby.png"/>
         </main>
-        <svg id="left" viewBox="0 0 24 24"><path fill="#00000080" d="M3 24l18-12-18-12v24zm16.197-12l-15.197 10.132v-20.263l15.197 10.131"/></svg>
+        <svg id="left" onclick="" viewBox="0 0 24 24"><path fill="#00000080" d="M3 24l18-12-18-12v24zm16.197-12l-15.197 10.132v-20.263l15.197 10.131"/></svg>
         
-        <svg id="right" viewBox="0 0 24 24"><path fill="#00000080" d="M3 24l18-12-18-12v24zm16.197-12l-15.197 10.132v-20.263l15.197 10.131"/></svg>
+        <svg id="right" onclick="" viewBox="0 0 24 24"><path fill="#00000080" d="M3 24l18-12-18-12v24zm16.197-12l-15.197 10.132v-20.263l15.197 10.131"/></svg>
         
         <div id="check"><input id="checkbox" type="checkbox" onclick="a=!a; auto();"/>Auto</div>
     </body>
@@ -209,6 +209,8 @@
                 main.style.transform = "scale(1)"
                 main.style.top = "0px"
                 main.style.left = "0px"
+                document.getElementById("left").setAttribute("onclick","")
+                document.getElementById("right").setAttribute("onclick","")
                 document.getElementById("left").style.display = document.getElementById("right").style.display = "none"
                 for(i=0;i<5;i++){
                     stickies[i].style.transform = ""
