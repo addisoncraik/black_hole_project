@@ -205,7 +205,7 @@
         
         main.onmouseup = function(e){
             let target = e
-            if((target && target.srcElement.id == "content") || escape){
+            if((target && target.srcElement.id == "content") || (target && target.srcElement.id == "kirb") || escape){
                 main.style.transform = "scale(1)"
                 main.style.top = "0px"
                 main.style.left = "0px"
