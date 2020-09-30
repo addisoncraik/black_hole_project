@@ -43,7 +43,7 @@
                 
                 <a class="back">
                     <h2>How do black holes form?</h2>
-                    <ul><li>Black holes are made when a star at least 20 times the size of the sun reaches the end of its life and goes supernova collapsing in on itself.</li><li>Stars that are less than 20 times the size of the sun but bigger than 10 times the size of the sun will turn into a neutron star. While stars that are less than 10 times the size of the sun will turn into a white dwarfs.</li><li>When a star nears the end of its life it runs out of fuel. When it gets to this state the star starts to fuse Helium into the next element and so on until it reaches iron, at this point it starts going supernova.</li></ul>
+                    <ul><li>Black holes are made when a star at least 20 times the size of the sun reaches the end of its life and goes supernova collapsing in on itself.</li><li>Stars that are less than 20 times the size of the sun but bigger than 10 times the size of the sun will turn into a neutron star. While stars that are less than 10 times the size of the sun will turn into a white dwarfs.</li><li>When a star nears the end of its life it runs out of hydrogen to fuse into helium this process produces a lot of energy. When it gets to this state the star starts to fuse Helium into the next element and so on until it reaches iron, at this point it starts going supernova.</li></ul>
                 </a>
             </div>
             <div id="sticky4" onclick="sticky4()">
@@ -67,9 +67,10 @@
                 
                 <a class="back">
                     <h2>How might that evidence be collected?</h2>
-                    <ul><li>To collect the evidence used to find black holes scientists generally rely on telescopes and satelites both on earth and in space.</li><li>To obtain the image of black hole <b>IRAS 13224-3809</b> scientists used many telescopes all observing the same point in space for 10 days, they then compiled over 5 petabytes of data in to one image.</li><li>Scientist have been able to observe the collision of two black holes using a Laser Interferometer Gravitational-wave Observatory detectors.<b>(LIGO)</b></li></ul>
+                    <ul><li>To collect the evidence used to find black holes scientists generally rely on telescopes and satelites both on earth and in space.</li><li>To obtain the image of black hole <b>IRAS 13224-3809</b> scientists used many telescopes all observing the same point in space for 10 days, they then compiled over 5 petabytes of data in to one image.</li><li>Scientist have been able to observe the collision of two black holes using multiple Laser Interferometer Gravitational-wave Observatory detectors. <b>(LIGO)</b></li></ul>
                 </a>
-            </div>
+            </div>   
+            <img id="kirb" src="../imgs/kirby.png"/>
         </main>
         <svg id="left" viewBox="0 0 24 24"><path fill="#00000080" d="M3 24l18-12-18-12v24zm16.197-12l-15.197 10.132v-20.263l15.197 10.131"/></svg>
         
@@ -87,12 +88,21 @@
         let escape = 0;
         let a = 0;
         let timeouts = []
+        let keys = ""
         
         for(i=1;i<6;i++){
             stickies.push(document.getElementById("sticky"+i))
         }
         
         function auto(){
+            
+            for(let i=0;i<5;i++){
+                stickies[i].children[0].style.visibility = "visible"
+                stickies[i].children[1].style.display = "none"
+            }
+                                                        
+            escape = 1;
+            main.onmouseup()
             
             for(i=0;i<timeouts.length;i++){
                 clearTimeout(timeouts[i])
@@ -143,26 +153,17 @@
                                                                     auto()
                                                                 }
                                                             },5000)
-                                                        },10000)
+                                                        },38000)
                                                     },5000)
-                                                },10000)
+                                                },34000)
                                             },5000)
-                                        },10000)
+                                        },49000)
                                     },5000)
-                                },10000)
+                                },35000)
                             },5000)
-                        },10000)
+                        },37000)
                     },5000)        
                 },5000)
-            }else{
-                for(i=1;i<6;i++){
-                    if(stickies[i-1].children[0].style.visibility == "hidden"){
-                        window["sticky"+i]()
-                    }
-                }
-                                                        
-                escape = 1;
-                main.onmouseup()
             }
         }
         
@@ -318,5 +319,13 @@
         zzfxV=1;zzfx=(q=1,k=.05,c=220,e=0,t=0,u=.1,r=0,F=1,v=0,z=0,w=0,A=0,l=0,B=0,x=0,G=0,d=0,y=1,m=0,C=0)=>{let b=2*Math.PI,H=v*=500*b/zzfxR**2,I=(0<x?1:-1)*b/4,D=c*=(1+2*k*Math.random()-k)*b/zzfxR,Z=[],g=0,E=0,a=0,n=1,J=0,K=0,f=0,p,h;e=9+zzfxR*e;m*=zzfxR;t*=zzfxR;u*=zzfxR;d*=zzfxR;z*=500*b/zzfxR**3;x*=b/zzfxR;w*=b/zzfxR;A*=zzfxR;l=zzfxR*l|0;for(h=e+m+t+u+d|0;a<h;Z[a++]=f)++K%(100*G|0)||(f=r?1<r?2<r?3<r?Math.sin((g%b)**3):Math.max(Math.min(Math.tan(g),1),-1):1-(2*g/b%2+2)%2:1-4*Math.abs(Math.round(g/b)-g/b):Math.sin(g),f=(l?1-C+C*Math.sin(2*Math.PI*a/l):1)*(0<f?1:-1)*Math.abs(f)**F*q*zzfxV*(a<e?a/e:a<e+m?1-(a-e)/m*(1-y):a<e+m+t?y:a<h-d?(h-a-d)/u*y:0),f=d?f/2+(d>a?0:(a<h-d?1:(h-a)/d)*Z[a-d|0]/2):f),p=(c+=v+=z)*Math.sin(E*x-I),g+=p-p*B*(1-1E9*(Math.sin(a)+1)%2),E+=p-p*B*(1-1E9*(Math.sin(a)**2+1)%2),n&&++n>A&&(c+=w,D+=w,n=0),!l||++J%l||(c=D,v=H,n=n||1);q=zzfxX.createBuffer(1,h,zzfxR);q.getChannelData(0).set(Z);c=zzfxX.createBufferSource();c.buffer=q;c.connect(zzfxX.destination);c.start();return c};zzfxX=new(window.AudioContext||webkitAudioContext);zzfxR=44100
         
         auto()
+        
+        document.onkeydown = function(e){
+            keys += e.key
+            if(keys.indexOf("ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightbaEnter") >= 0){
+                keys = ""
+                window.location.href = "../sources.html";
+            }
+        }
     </script>
 </html>
