@@ -147,6 +147,21 @@ div .front p{
     bottom:1.5vw;
 }
 
+div .back ul li{
+    margin-bottom: .4vw;
+}
+
+
+div .back ul{
+    margin: 1vw 1vw 0 0;
+    font-size: .7vw;
+}
+
+div .back ul ol{
+    font-size: .6vw;
+    padding-left:1vw;
+}
+
 #sticky4 .front p{
     bottom:2vw;
 }
