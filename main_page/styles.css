@@ -22,6 +22,7 @@ div{
     position: absolute;
     transition: linear .2s;
     box-shadow: 0px 15px 9px #00000080;
+    z-index: 1;
 }
 
 #left{
@@ -153,13 +154,14 @@ div .back p{
 }
 
 div .back ul li{
-    margin-bottom: .4vw;
+    margin-bottom: .5vw;
 }
 
 
 div .back ul{
     margin: 1vw 1vw 0 0;
     font-size: .65vw;
+    padding-left: 2vw;
 }
 
 div .back ul ol{
@@ -170,6 +172,15 @@ div .back ul ol{
 #sticky4 .front p{
     bottom:2vw;
 }
+
+#sticky5 a h2{
+    font-size: .9vw;
+}
+
+#sticky3 .back ul{
+    margin-top:.5vw;
+}
+
 
 div a img{
     width:17vw;
@@ -198,4 +209,14 @@ div a img{
 
 #checkbox{
     margin-right:5px;
+}
+
+#kirb{
+    opacity: 0.5;
+    transform: rotate(-37deg);
+    position: absolute;
+    top:38vh;
+    left:20vw;
+    width:60vw;
+    z-index:0;
 }
